@@ -1,3 +1,4 @@
+// JDL for worktajm
 
 
 entity Organization {
@@ -39,29 +40,13 @@ entity WorkLog {
     comment String
 }
 
-relationship OneToMany {
-	Project{organization} to Organization
-}
+relationship OneToMany { Project{organization} to Organization }
+relationship OneToMany { Worker{project} to Project }
+relationship OneToMany { Organization{organization} to Worker }
+relationship OneToMany { WorkLog{workLog} to Worker }
+relationship OneToMany { WorkLog{workLog} to Projec }
 
-relationship OneToMany {
-	Worker{project} to Project
-}
-
-relationship OneToMany {
-	Organization{worker} to Worker
-}
-
-relationship OneToMany {
-	WorkLog{project} to Project
-}
-
-relationship OneToMany {
-	WorkLog{worker} to Worker
-}
-
-relationship OneToOne {
-	Address{worker} to Organization
-}
+relationship OneToOne { Address{billingAddress} to Organization }
 
 paginate WorkLog, Worker with infinite-scroll
 paginate Project with pagination
@@ -70,4 +55,3 @@ dto Worker with mapstruct
 
 service Worker with serviceClass
 
-	
