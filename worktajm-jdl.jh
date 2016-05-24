@@ -46,8 +46,8 @@ relationship OneToMany { Project{organization} to Organization }
 relationship OneToMany { Worker{project} to Project }
 relationship OneToMany { Worker{organization} to Organization }
 
-relationship OneToMany { WorkLog{workLog} to Worker }
-relationship OneToMany { WorkLog{workLog} to Project }
+relationship OneToMany { WorkLog{worker} to Worker }
+relationship OneToMany { WorkLog{project} to Project }
 
 paginate WorkLog, Worker with infinite-scroll
 paginate Project with pagination
