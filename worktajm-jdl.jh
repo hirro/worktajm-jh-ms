@@ -40,13 +40,14 @@ entity WorkLog {
     comment String
 }
 
+relationship OneToOne { Address{billingAddress} to Organization }
+
 relationship OneToMany { Project{organization} to Organization }
 relationship OneToMany { Worker{project} to Project }
-relationship OneToMany { Organization{organization} to Worker }
-relationship OneToMany { WorkLog{workLog} to Worker }
-relationship OneToMany { WorkLog{workLog} to Projec }
+relationship OneToMany { Worker{organization} to Organization }
 
-relationship OneToOne { Address{billingAddress} to Organization }
+relationship OneToMany { WorkLog{workLog} to Worker }
+relationship OneToMany { WorkLog{workLog} to Project }
 
 paginate WorkLog, Worker with infinite-scroll
 paginate Project with pagination
