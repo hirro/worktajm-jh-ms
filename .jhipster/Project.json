@@ -1,0 +1,51 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "worker",
+      "otherEntityName": "worker",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "organization",
+      "otherEntityName": "organization",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "project"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "workLog",
+      "otherEntityName": "workLog",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "projectId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "projectTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "minSalary",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "maxSalary",
+      "fieldType": "Long"
+    }
+  ],
+  "changelogDate": "20160524081804",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no"
+}

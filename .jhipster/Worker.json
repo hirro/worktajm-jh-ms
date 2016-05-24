@@ -1,0 +1,57 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "project",
+      "otherEntityName": "project",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "worker"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "organization",
+      "otherEntityName": "organization",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "worker"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "workLog",
+      "otherEntityName": "workLog",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "workerId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "role",
+      "fieldType": "Role",
+      "fieldValues": "OWNER,ADMIN,MEMBER"
+    }
+  ],
+  "changelogDate": "20160524081803",
+  "dto": "mapstruct",
+  "pagination": "infinite-scroll",
+  "service": "serviceClass"
+}

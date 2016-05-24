@@ -1,0 +1,39 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "billingAddress",
+      "otherEntityName": "organization",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "address"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "addressId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "line1",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "line2",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "country",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160524081802",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no"
+}

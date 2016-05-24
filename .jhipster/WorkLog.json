@@ -1,0 +1,39 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "worker",
+      "otherEntityName": "worker",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "workLog"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "project",
+      "otherEntityName": "project",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "workLog"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "startDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "endDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "comment",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160524081805",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "no"
+}
