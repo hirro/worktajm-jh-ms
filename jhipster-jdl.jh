@@ -1,0 +1,73 @@
+
+
+entity Organization {
+	organizationId Long,
+	organizationName String required
+}
+
+entity Address {
+	addressId Long,
+    line1 String,
+    line2 String,
+    country String
+}
+
+enum Role {
+	OWNER,
+    ADMIN,
+	MEMBER
+}
+
+entity Worker {
+	workerId Long,
+	firstName String,
+	lastName String,
+	email String,
+    role Role
+}
+
+entity Project {
+	projectId Long,
+	projectTitle String,
+	minSalary Long,
+	maxSalary Long
+}
+
+entity WorkLog {
+	startDate ZonedDateTime,
+	endDate ZonedDateTime,
+    comment String
+}
+
+relationship OneToMany {
+	Project{organization} to Organization
+}
+
+relationship OneToMany {
+	Worker{project} to Project
+}
+
+relationship OneToMany {
+	Organization{worker} to Worker
+}
+
+relationship OneToMany {
+	WorkLog{project} to Project
+}
+
+relationship OneToMany {
+	WorkLog{worker} to Worker
+}
+
+relationship OneToOne {
+	Address{worker} to Organization
+}
+
+paginate WorkLog, Worker with infinite-scroll
+paginate Project with pagination
+
+dto Worker with mapstruct
+
+service Worker with serviceClass
+
+	
