@@ -1,8 +1,7 @@
 version: '2'
 services:
     worktajmms-sonar:
-        container_name: worktajmms-sonar
-        image: sonarqube:5.3
+        image: sonarqube:6.2-alpine
         ports:
             - 9000:9000
             - 9092:9092
